@@ -62,12 +62,18 @@ rigod = \relative c,, {
   >>
 
 \layout {
-  indent = 0\cm
-    \Staff
+    indent = 0\cm
+    \context {
+      \Staff
       \remove "Time_signature_engraver"
       %\remove "Clef_engraver"
-      \remove "Bar_engraver"
+      %\remove "Bar_engraver"
     }
+    \context {
+      \Score
+      \remove "Bar_number_engraver"
+    }
+  }
 
   \midi {}
 }
